@@ -430,8 +430,9 @@ def tampilkan_referensi_cluster(compact=False):
                 "Persentase"
             ].iloc[0]
         )
+        target_col = cols[0] if k < 3 else cols[1]
 
-        with cols[idx % 2]:
+        with target_col:
             with st.container(border=True):
                 st.markdown(f"#### Cluster {k}")
                 st.markdown(f"**{v['label']}**")
